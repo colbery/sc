@@ -10,7 +10,7 @@ def parse_arguments():
     parser.add_argument("--ttt", type=int, default=1, help="TTT value")
     parser.add_argument("--alpha", type=int, default=3, help="Alpha value")
     parser.add_argument("--disconnect_threshold", type=int, default=-20, help="Disconnect Threshold")
-    parser.add_argument("--initial_phase", type=int, default=5, help="Initial Phase")
+    parser.add_argument("--initial_phase", type=int, default=6, help="Initial Phase")
     parser.add_argument("--lambda_value", type=int, default=1250, help="Lambda value")
     parser.add_argument("--user_limit", type=int, default=104, help="User Limit")
     parser.add_argument("--constant_speed", type=int, default=55, help="Constant Speed")
