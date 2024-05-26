@@ -23,6 +23,7 @@ conditional_check = True
 # --------------- Dodanie 1 osoby ------------------
 time_z = configValues.GLOBAL_TIME + configValues.REPORT_INTERVAL
 user = User(time_z)
+#user.speed = 5  # gdy predkosc na sztywno
 queue1.add_user(user)
 print(f"User {user.id} added to queue. Time:", time_z)
 random_wyk = generator3()
@@ -80,6 +81,7 @@ def handle_user_handover(user, Pb_B1, Pb_B2):
 def update_user_report(user, generator4):
     random_row = generator4()
     user.distance += 0.02 * random_row
+    # gdy predkosc na sztywno user.distance += user.speed * (configValues.REPORT_INTERVAL / 1000.0)
     user.time += configValues.REPORT_INTERVAL
     return user
 
@@ -103,6 +105,7 @@ def process_user_handover(user, Pb_B1, Pb_B2):
 def add_user_to_system(queue1, queue2):
     time = configValues.GLOBAL_TIME + configValues.REPORT_INTERVAL
     user = User(time)
+   # gdy predkosc na sztywno user.speed = 5  
     added = False
     if len(queue1.queue) < queue1.max_size:
         queue1.add_user(user)
